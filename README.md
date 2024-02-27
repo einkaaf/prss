@@ -86,9 +86,10 @@ Fetches the khodrobank RSS feed and returns it as JSON.
 Fetches the Car.IR RSS feed and returns it as JSON.
 
 ## Caching
-
+```go
 > DefaultExpiration = 5 minutes | CleanupInterval = 15 minutes
-You can adjust it on "prssCache.go" go file !
+```
+You can adjust it on "prssCache.go" file !
 
 
 ## Error Handling
