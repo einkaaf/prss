@@ -1,15 +1,17 @@
-#build stage
-FROM golang:alpine AS builder
-RUN apk add --no-cache git
-WORKDIR /go/src/app
-COPY . .
-RUN go get -d -v ./...
-RUN go build -o /go/bin/app -v ./...
+# Use an official Golang runtime as a parent image
+FROM golang:latest
 
-#final stage
-FROM alpine:latest
-RUN apk --no-cache add ca-certificates
-COPY --from=builder /go/bin/app /app
-ENTRYPOINT /app
-LABEL Name=prss Version=0.0.1
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+ADD . /app
+
+# Build the Go app
+RUN go build -o main .
+
+# Expose port 8080 to the outside world
 EXPOSE 8080
+
+# Command to run the executable
+CMD ["./main"]
