@@ -2,7 +2,7 @@ A Go program using the Gin framework to create an API endpoint that fetches an R
 
 # Rss API Integration
 
-This project focuses on web scraping and crawling news articles from various Iranian news websites. It utilizes Golang for efficient web crawling and JSON data generation. The primary goal is to provide a tool that gathers up-to-date news content and sends it in a structured JSON format to individuals or systems that require this information.
+This project focuses on web scraping and crawling news articles from various Iranian news websites with builtin caching. It utilizes Golang for efficient web crawling and JSON data generation. The primary goal is to provide a tool that gathers up-to-date news content and sends it in a structured JSON format to individuals or systems that require this information.
 
 | Category | Web Link | Reading Type |
 |  :---:  |     :---:      |          :---: |
@@ -17,8 +17,10 @@ This project focuses on web scraping and crawling news articles from various Ira
 
 ## Table of Contents
 - [Installation](#installation)
+- [Docker Installation](#docker-installation)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
+- [Caching](#caching)
 - [Error Handling](#error-handling)
 - [Contributing](#contributing)
 - [License](#license)
@@ -30,6 +32,7 @@ To run the Prss API Integration locally, make sure you have Go installed. Clone 
 ```bash
 go run main.go
 ```
+
 ## Docker Installation
 To run the Prss API Integration via docker, make sure you have docker installed and execute the following command:
 
@@ -45,7 +48,6 @@ And for the last step , just run container :
 > docker run -d -p 8080:8080 press
 ```
 
-
 ## Usage
 - Once the application is running, access the API endpoint at http://localhost:8080/api/zoomit to retrieve the zoomit RSS feed in JSON format.
 - Once the application is running, access the API endpoint at http://localhost:8080/api/digiato to retrieve the digiato RSS feed in JSON format.
@@ -56,8 +58,8 @@ And for the last step , just run container :
 - Once the application is running, access the API endpoint at http://localhost:8080/api/khodrobank to retrieve the khodrobank RSS feed in JSON format.
 - Once the application is running, access the API endpoint at http://localhost:8080/api/carprice to retrieve the Car.IR RSS feed in JSON format.
 
-## API Endpoints
 
+## API Endpoints
 
 > GET /api/zoomit |
 Fetches the Zoomit RSS feed and returns it as JSON.
@@ -82,6 +84,12 @@ Fetches the khodrobank RSS feed and returns it as JSON.
 
 > GET /api/carprice |
 Fetches the Car.IR RSS feed and returns it as JSON.
+
+## Caching
+
+> DefaultExpiration = 5 minutes | CleanupInterval = 15 minutes
+You can adjust it on "prssCache.go" go file !
+
 
 ## Error Handling
 The API provides structured error responses for various scenarios:
