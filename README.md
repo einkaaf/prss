@@ -25,11 +25,26 @@ This project focuses on web scraping and crawling news articles from various Ira
 
 ## Installation
 
-To run the Zoomit API Integration locally, make sure you have Go installed. Clone this repository and execute the following command:
+To run the Prss API Integration locally, make sure you have Go installed. Clone this repository and execute the following command:
 
 ```bash
 go run main.go
 ```
+## Docker Installation
+To run the Prss API Integration via docker, make sure you have docker installed and execute the following command:
+
+```bash
+> git clone https://github.com/einkaaf/prss
+```
+After Cloning Project just build docker file :
+```bash
+> docker build -t press .
+```
+And for the last step , just run container :
+```bash
+> docker run -d -p 8080:8080 press
+```
+
 
 ## Usage
 - Once the application is running, access the API endpoint at http://localhost:8080/api/zoomit to retrieve the zoomit RSS feed in JSON format.
