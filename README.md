@@ -109,8 +109,53 @@ The API provides structured error responses for various scenarios:
   "error": "Failed to convert data to JSON"
 }
 ```
-## Contributing
-If you'd like to contribute to this project, feel free to open an issue or submit a pull request. Please follow the Contribution Guidelines.
+# Contribute
+
+Thank you for considering contributing to this project! Your involvement is crucial for making it better.
+
+## Ways to Contribute
+
+1. **Bug Reports:** If you encounter any issues while using the project, please [open a new issue](https://github.com/einkaaf/prss/issues/new) and provide detailed information about the problem, including steps to reproduce it.
+
+2. **Feature Requests:** Have a great idea for a new feature? [Open an issue](https://github.com/einkaaf/prss/issues/new) to discuss and share your thoughts on potential enhancements.
+
+3. **Code Contributions:** Feel free to fork the repository, make improvements, and submit a pull request. Please make sure to follow the existing coding style and include relevant documentation. We appreciate your effort to enhance the project.
+
+4. **Documentation:** Help us improve the project's documentation by fixing typos, adding clarifications, or suggesting improvements. Documentation is crucial for the project's success, and your contributions are valuable.
+
+5. **Community Feedback:** Engage with other users, share your experiences, and help answer questions in the [Discussions](https://github.com/einkaaf/prss/discussions) section. Your insights can make a significant impact on the project's development.
+
+## Getting Started
+
+1. **Fork the Repository:** Click the "Fork" button on the top-right corner of this page to create your copy of the repository.
+
+2. **Clone Your Fork:** Clone your forked repository to your local machine using the following command:
+   ```
+   git clone https://github.com/einkaaf/prss.git
+   ```
+
+3. **Create a Branch:** Create a new branch for your contributions. This helps keep your changes isolated and makes the review process smoother.
+   ```
+   git checkout -b feature-or-fix-branch
+   ```
+
+4. **Make Changes:** Implement your changes, following the coding style and guidelines.
+
+5. **Commit Changes:** Commit your changes with a descriptive commit message.
+   ```
+   git commit -m "Your informative commit message"
+   ```
+
+6. **Push Changes:** Push your changes to your fork on GitHub.
+   ```
+   git push origin feature-or-fix-branch
+   ```
+
+7. **Open a Pull Request:** Go to the [Pull Requests]( https://github.com/einkaaf/prss/pulls) section of the original repository and open a new pull request. Provide details about your changes and follow the template, if available.
+
+Thank you, Saeed Karimi, for your invaluable contributions that have greatly enriched and strengthened our project.
+
+Thank you for your contributions!
 
 ## License
 This PRSS (Persian RSS) Integration is licensed under the MIT License. See the LICENSE file for details.
