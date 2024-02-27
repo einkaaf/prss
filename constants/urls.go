@@ -11,3 +11,15 @@ const (
 
 	CarIRPriceURL = "https://api.car.ir/car-prices"
 )
+
+const (
+	ZoomitKey     = "ZoomitKey"
+	DigiatoKey    = "DigiatoKey"
+	TasnimKey     = "TasnimKey"
+	TabnakKey     = "TabnakKey"
+	YJCKey        = "YJCKey"
+	ZoomgKey      = "ZoomgKey"
+	KhodroBankKey = "KhodroBankKey"
+
+	CarIRPriceKey = "CarIRPriceKey"
+)
