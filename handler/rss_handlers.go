@@ -70,7 +70,7 @@ func CheckCache(key string) (string, bool) {
 	// check cache
 	cache := cache.NewPrssCache()
 
-	cacheResult, found := cache.GetCachedItem(constants.ZoomitKey)
+	cacheResult, found := cache.GetCachedItem(key)
 
 	if found {
 		return cacheResult.(string), true
