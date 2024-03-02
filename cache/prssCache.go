@@ -23,7 +23,7 @@ func NewPrssCache() *PrssCache {
 	return pCacheInstance
 }
 
-func (pc *PrssCache) SetCachedItem(key string, item any) {
+func (pc *PrssCache) SetCachedItem(key string, item interface{}) {
 	pc.c.Set(key, item, time.Minute*5)
 }
 

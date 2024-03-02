@@ -66,14 +66,14 @@ func fetchJsonData(c *gin.Context, url string, target interface{}) error {
 	return nil
 }
 
-func CheckCache(key string) (string, bool) {
+func CheckCache(key string) (interface{}, bool) {
 	// check cache
 	cache := cache.NewPrssCache()
 
 	cacheResult, found := cache.GetCachedItem(key)
 
 	if found {
-		return cacheResult.(string), true
+		return cacheResult, true
 	} else {
 		return "", false
 	}
@@ -94,15 +94,9 @@ func ZoomitHandler(c *gin.Context) {
 		return
 	}
 
-	res, err := json.Marshal(data)
-	if err != nil {
-		handleError(c, http.StatusInternalServerError, "Failed to convert data to JSON")
-		return
-	}
+	cache.SetCachedItem(constants.ZoomitKey, data)
 
-	cache.SetCachedItem(constants.ZoomitKey, string(res))
-
-	c.JSON(http.StatusOK, string(res))
+	c.JSON(http.StatusOK, data)
 }
 
 func DigiatoHandler(c *gin.Context) {
@@ -118,15 +112,9 @@ func DigiatoHandler(c *gin.Context) {
 		return
 	}
 
-	res, err := json.Marshal(data)
-	if err != nil {
-		handleError(c, http.StatusInternalServerError, "Failed to convert data to JSON")
-		return
-	}
+	cache.SetCachedItem(constants.DigiatoKey, data)
 
-	cache.SetCachedItem(constants.DigiatoKey, string(res))
-
-	c.JSON(http.StatusOK, string(res))
+	c.JSON(http.StatusOK, data)
 }
 
 func TasnimHandler(c *gin.Context) {
@@ -143,14 +131,8 @@ func TasnimHandler(c *gin.Context) {
 		return
 	}
 
-	res, err := json.Marshal(data)
-	if err != nil {
-		handleError(c, http.StatusInternalServerError, "Failed to convert data to JSON")
-		return
-	}
-
-	cache.SetCachedItem(constants.TasnimKey, string(res))
-	c.JSON(http.StatusOK, string(res))
+	cache.SetCachedItem(constants.TasnimKey, data)
+	c.JSON(http.StatusOK, data)
 }
 
 func TabnakHandler(c *gin.Context) {
@@ -167,14 +149,8 @@ func TabnakHandler(c *gin.Context) {
 		return
 	}
 
-	res, err := json.Marshal(data)
-	if err != nil {
-		handleError(c, http.StatusInternalServerError, "Failed to convert data to JSON")
-		return
-	}
-
-	cache.SetCachedItem(constants.TabnakKey, string(res))
-	c.JSON(http.StatusOK, string(res))
+	cache.SetCachedItem(constants.TabnakKey, data)
+	c.JSON(http.StatusOK, data)
 }
 
 func YJCHandler(c *gin.Context) {
@@ -191,14 +167,8 @@ func YJCHandler(c *gin.Context) {
 		return
 	}
 
-	res, err := json.Marshal(data)
-	if err != nil {
-		handleError(c, http.StatusInternalServerError, "Failed to convert data to JSON")
-		return
-	}
-
-	cache.SetCachedItem(constants.YJCKey, string(res))
-	c.JSON(http.StatusOK, string(res))
+	cache.SetCachedItem(constants.YJCKey, data)
+	c.JSON(http.StatusOK, data)
 }
 
 func ZoomgHandler(c *gin.Context) {
@@ -214,13 +184,8 @@ func ZoomgHandler(c *gin.Context) {
 		return
 	}
 
-	res, err := json.Marshal(data)
-	if err != nil {
-		handleError(c, http.StatusInternalServerError, "Failed to convert data to JSON")
-		return
-	}
-	cache.SetCachedItem(constants.ZoomgKey, string(res))
-	c.JSON(http.StatusOK, string(res))
+	cache.SetCachedItem(constants.ZoomgKey, data)
+	c.JSON(http.StatusOK, data)
 }
 
 func KhodroBankHandler(c *gin.Context) {
@@ -235,13 +200,8 @@ func KhodroBankHandler(c *gin.Context) {
 		return
 	}
 
-	res, err := json.Marshal(data)
-	if err != nil {
-		handleError(c, http.StatusInternalServerError, "Failed to convert data to JSON")
-		return
-	}
-	cache.SetCachedItem(constants.KhodroBankKey, string(res))
-	c.JSON(http.StatusOK, string(res))
+	cache.SetCachedItem(constants.KhodroBankKey, data)
+	c.JSON(http.StatusOK, data)
 }
 
 func CarPriceHandler(c *gin.Context) {
@@ -256,13 +216,8 @@ func CarPriceHandler(c *gin.Context) {
 		return
 	}
 
-	res, err := json.Marshal(data)
-	if err != nil {
-		handleError(c, http.StatusInternalServerError, "Failed to convert data to JSON")
-		return
-	}
-	cache.SetCachedItem(constants.CarIRPriceKey, string(res))
-	c.JSON(http.StatusOK, string(res))
+	cache.SetCachedItem(constants.CarIRPriceKey, data)
+	c.JSON(http.StatusOK, data)
 }
 
 func handleError(c *gin.Context, statusCode int, message string) {
